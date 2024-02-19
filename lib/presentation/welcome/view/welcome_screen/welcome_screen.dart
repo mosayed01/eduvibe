@@ -1,3 +1,4 @@
+import 'package:eduvibe/core/route/routes.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -11,6 +12,12 @@ class WelcomeScreen extends StatelessWidget {
           'Welcome Screen',
           style: Theme.of(context).textTheme.bodyLarge,
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, Routes.mainScreen);
+        },
+        child: Icon(Icons.navigate_next_outlined),
       ),
     );
   }

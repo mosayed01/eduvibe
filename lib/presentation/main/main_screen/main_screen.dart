@@ -12,6 +12,12 @@ class MainScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Icon(Icons.navigate_before_outlined),
+      ),
     );
   }
 }
