@@ -1,5 +1,5 @@
 class Routes {
-  static const String onBoardingScreen = '/onBoardingScreen'; // TODO: implement screen
+  static const String onBoardingScreen = '/onBoardingScreen';
   static const String welcomeScreen = '/welcomeScreen'; // TODO: implement screen
   static const String signUpScreen = '/signUpScreen'; // TODO: implement screen
   static const String otpScreen = '/otpScreen'; // TODO: implement screen
