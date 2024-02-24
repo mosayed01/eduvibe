@@ -19,8 +19,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     return ScreenUtilInit(
       designSize: const Size(360, 800),
+      minTextAdapt: true,
       child: MaterialApp(
         navigatorKey: AppRouter.navigateKey,
         debugShowCheckedModeBanner: false,
