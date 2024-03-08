@@ -12,10 +12,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.6
   google_fonts: ^6.1.0
   flutter_native_splash: ^2.3.11
+  flutter_svg: ^2.0.9
+  flutter_screenutil: ^5.9.0 # for adapting screen and font size.
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +32,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/svgs/
 
   fonts:
     - family: Proza Libre
@@ -35,3 +40,10 @@ flutter:
         - asset: assets/fonts/pl_medium.ttf
         - asset: assets/fonts/pl_regular.ttf
         - asset: assets/fonts/pl_semibold.ttf
+flutter_intl:
+  enabled: true
+  class_name: AppLocalizations
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/generated
+  use_deferred_loading: false
