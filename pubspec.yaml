@@ -7,7 +7,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.6 <4.0.0'
+  sdk: '3.2.0-42.2.beta'
 
 dependencies:
   flutter:
@@ -17,9 +17,13 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   google_fonts: ^6.1.0
-  flutter_native_splash: ^2.3.11
+#  flutter_native_splash: ^2.3.11
   flutter_svg: ^2.0.9
   flutter_screenutil: ^5.9.0 # for adapting screen and font size.
+  intl_phone_number_input: ^0.7.4
+  pinput: ^2.2.31
+  flutter_bloc: ^8.1.2
+  bloc: ^8.1.1
 
 dev_dependencies:
   flutter_test:
@@ -27,9 +31,8 @@ dev_dependencies:
 
 
 flutter:
-
   uses-material-design: true
-
+  generate: true
   assets:
     - assets/images/
     - assets/svgs/
