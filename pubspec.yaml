@@ -20,6 +20,9 @@ dependencies:
   flutter_native_splash: ^2.3.11
   flutter_svg: ^2.0.9
   flutter_screenutil: ^5.9.0 # for adapting screen and font size.
+  intl_phone_number_input: ^0.7.4
+  pinput: ^2.2.31
+  bloc: ^8.1.1
   flutter_bloc: ^7.3.0
   equatable: ^2.0.3
   get_it: ^7.2.0
@@ -32,9 +35,8 @@ dev_dependencies:
 
 
 flutter:
-
   uses-material-design: true
-
+  generate: true
   assets:
     - assets/images/
     - assets/svgs/
