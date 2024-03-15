@@ -8,7 +8,7 @@ class Routes {
   static const String resetPasswordScreen = '/resetPasswordScreen'; // TODO: implement screen
   static const String mainScreen = '/mainScreen'; // TODO: implement screen
   static const String notificationsScreen = '/notificationsScreen'; // TODO: implement screen
-  static const String profileScreen = '/profileScreen'; // TODO: implement screen
+  static const String profileScreen = '/profileScreen';
   static const String libraryScreen = '/libraryScreen'; // TODO: implement screen
   static const String coursesScreen = '/coursesScreen'; // TODO: implement screen
   static const String helpScreen = '/helpScreen'; // TODO: implement screen
