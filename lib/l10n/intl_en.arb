@@ -6,5 +6,12 @@
   "onboardingTitle3": "We have a giant library",
   "onboardingDescription3": "You will find all books and resources any field you want",
   "skip": "Skip",
-  "next": "Next"
+  "next": "Next",
+  "profile": "Profile",
+  "changePassword": "Change Password",
+  "email": "Email",
+  "phone": "Phone",
+  "university": "University",
+  "chart": "Chart",
+  "totalThisWeek": "Total this week"
 }
