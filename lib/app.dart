@@ -39,11 +39,13 @@ class MyApp extends StatelessWidget {
         theme: buildLightTheme(Brightness.light),
         darkTheme: buildDarkTheme(Brightness.dark),
         themeMode: ThemeMode.system,
-        initialRoute: isLoggedIn
-            ? Routes.mainScreen
-            : isFirstTime
-                ? Routes.onBoardingScreen
-                : Routes.welcomeScreen,
+        initialRoute: Routes.profileScreen
+        // isLoggedIn
+        //     ? Routes.mainScreen
+        //     : isFirstTime
+        //         ? Routes.onBoardingScreen
+        //         : Routes.welcomeScreen
+        ,
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );

@@ -15,3 +15,32 @@ class EVColors {
   static const Color onBackground37Dark = Color(0x5EFFFFFF);
   static const Color onBackground16Dark = Color(0x29FFFFFF);
 }
+
+// region Helpers
+bool isDarkMode(BuildContext context) =>
+    Theme.of(context).brightness == Brightness.dark;
+
+Color getOnBackground87(BuildContext context) {
+  return isDarkMode(context)
+      ? EVColors.onBackground87Dark
+      : EVColors.onBackground87Light;
+}
+
+Color getOnBackground60(BuildContext context) {
+  return isDarkMode(context)
+      ? EVColors.onBackground60Dark
+      : EVColors.onBackground60Light;
+}
+
+Color getOnBackground37(BuildContext context) {
+  return isDarkMode(context)
+      ? EVColors.onBackground37Dark
+      : EVColors.onBackground37Light;
+}
+
+Color getOnBackground16(BuildContext context) {
+  return isDarkMode(context)
+      ? EVColors.onBackground16Dark
+      : EVColors.onBackground16Light;
+}
+// endregion

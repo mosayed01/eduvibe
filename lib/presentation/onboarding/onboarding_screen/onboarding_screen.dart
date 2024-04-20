@@ -35,8 +35,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -53,9 +51,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Text(
                   AppLocalizations.current.skip,
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: isDarkMode
-                        ? EVColors.onBackground60Dark
-                        : EVColors.onBackground60Light,
+                    color: getOnBackground60(context),
                   ),
                   overflow: TextOverflow.visible,
                 ),
