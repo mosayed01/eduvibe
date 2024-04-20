@@ -20,6 +20,10 @@ dependencies:
   flutter_native_splash: ^2.3.11
   flutter_svg: ^2.0.9
   flutter_screenutil: ^5.9.0 # for adapting screen and font size.
+  flutter_bloc: ^7.3.0
+  equatable: ^2.0.3
+  get_it: ^7.2.0
+  image_picker: ^1.1.0
 
 dev_dependencies:
   flutter_test:

@@ -5,6 +5,10 @@ import 'package:eduvibe/presentation/onboarding/onboarding_screen/onboarding_scr
 import 'package:eduvibe/presentation/profile/view/profile_screen.dart';
 import 'package:eduvibe/presentation/welcome/view/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../presentation/profile/cubit/profile_cubit.dart';
+import '../di/di.dart';
 
 class AppRouter {
   static GlobalKey<NavigatorState> navigateKey = GlobalKey<NavigatorState>();
@@ -18,7 +22,10 @@ class AppRouter {
       case Routes.mainScreen:
         return wrapWithPage(child: MainScreen());
       case Routes.profileScreen:
-        return wrapWithPage(child: ProfileScreen());
+        return wrapWithPage(child: BlocProvider(
+          create: (context) => getIt<ProfileCubit>()..getProfile(),
+          child: ProfileScreen(),
+        ));
       default:
         return wrapWithPage(child: WelcomeScreen());
     }
