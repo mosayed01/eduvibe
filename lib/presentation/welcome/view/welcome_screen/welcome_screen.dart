@@ -8,9 +8,23 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          'Welcome Screen',
-          style: Theme.of(context).textTheme.bodyLarge,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text('Welcome to Eduvibe'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.chatBotScreen);
+              },
+              child: const Text('chatBotScreen'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.profileScreen);
+              },
+              child: const Text('profileScreen'),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
