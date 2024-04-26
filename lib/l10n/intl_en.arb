@@ -47,5 +47,10 @@
   "confirmPassword" : "Confirm Password",
   "confirmNewPassword": "Confirm New Password",
   "cancel": "Cancel",
-  "save": "Save"
+  "save": "Save",
+  "chatbot" : "Chatbot",
+  "typeSome": "Type something here...",
+  "howCanIHelp": "How can i help you today?",
+  "other": "Other",
+  "botStrategy": "Ask for study strategy"
 }

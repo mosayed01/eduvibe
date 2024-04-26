@@ -6,8 +6,10 @@ class Assets {
   static const String arrowBack = 'assets/svgs/arrow_back.svg';
   static const String edit = 'assets/svgs/edit.svg';
   static const String profile = 'assets/images/profile.png';
+  static const String bot = 'assets/images/bot.png';
   static const String profileEdit = 'assets/svgs/profile_edit.svg';
   static const String email = 'assets/svgs/email.svg';
   static const String phone = 'assets/svgs/phone.svg';
   static const String university = 'assets/svgs/university.svg';
+  static const String send = 'assets/svgs/send.svg';
 }

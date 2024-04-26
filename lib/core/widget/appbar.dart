@@ -1,5 +1,6 @@
 import 'package:eduvibe/core/theme/assets.dart';
 import 'package:eduvibe/core/theme/ev_colors.dart';
+import 'package:eduvibe/core/widget/spacers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,17 +8,32 @@ import 'package:flutter_svg/svg.dart';
 AppBar buildAppBar(
   BuildContext context, {
   required String? title,
+  String? logoPath,
   bool backButton = true,
   List<Widget>? actions,
 }) {
   final bool canPop = ModalRoute.of(context)?.canPop ?? false;
   return AppBar(
     title: title != null
-        ? Text(
-            title,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: getOnBackground87(context),
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (logoPath != null)
+                Image.asset(
+                  logoPath,
+                  width: 30.w,
+                  height: 30.w,
+                  fit: BoxFit.contain,
                 ),
+              if (logoPath != null) horizontalSpacer(8),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      color: getOnBackground87(context),
+                    ),
+              ),
+            ],
           )
         : null,
     centerTitle: title != null ? true : null,

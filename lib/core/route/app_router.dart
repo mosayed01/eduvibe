@@ -1,5 +1,7 @@
 import 'package:eduvibe/core/route/page_wrapper.dart';
 import 'package:eduvibe/core/route/routes.dart';
+import 'package:eduvibe/presentation/chatbot/cubit/chatbot_cubit.dart';
+import 'package:eduvibe/presentation/chatbot/view/chatbot.dart';
 import 'package:eduvibe/presentation/main/main_screen/main_screen.dart';
 import 'package:eduvibe/presentation/onboarding/onboarding_screen/onboarding_screen.dart';
 import 'package:eduvibe/presentation/profile/view/profile_screen.dart';
@@ -13,7 +15,7 @@ import '../di/di.dart';
 class AppRouter {
   static GlobalKey<NavigatorState> navigateKey = GlobalKey<NavigatorState>();
 
-  static Route? onGenerateRoute(RouteSettings settings) {
+  static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.welcomeScreen:
         return wrapWithPage(child: WelcomeScreen());
@@ -22,9 +24,16 @@ class AppRouter {
       case Routes.mainScreen:
         return wrapWithPage(child: MainScreen());
       case Routes.profileScreen:
-        return wrapWithPage(child: BlocProvider(
+        return wrapWithPage(
+            child: BlocProvider(
           create: (context) => getIt<ProfileCubit>()..getProfile(),
           child: ProfileScreen(),
+        ));
+      case Routes.chatBotScreen:
+        return wrapWithPage(
+            child: BlocProvider(
+          create: (context) => getIt<ChatbotCubit>(),
+          child: ChatbotScreen(),
         ));
       default:
         return wrapWithPage(child: WelcomeScreen());

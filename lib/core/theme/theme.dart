@@ -1,7 +1,6 @@
 import 'package:eduvibe/core/theme/ev_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 ThemeData buildLightTheme(brightness) {
   var baseTheme = ThemeData(
@@ -23,9 +22,7 @@ ThemeData buildLightTheme(brightness) {
     textTheme: _createTextTheme(brightness),
   );
 
-  return baseTheme.copyWith(
-    textTheme: GoogleFonts.latoTextTheme(baseTheme.textTheme),
-  );
+  return baseTheme;
 }
 
 ThemeData buildDarkTheme(brightness) {
@@ -48,9 +45,7 @@ ThemeData buildDarkTheme(brightness) {
     textTheme: _createTextTheme(brightness),
   );
 
-  return baseTheme.copyWith(
-    textTheme: GoogleFonts.prozaLibreTextTheme(baseTheme.textTheme),
-  );
+  return baseTheme;
 }
 
 TextTheme _createTextTheme(Brightness brightness) {
