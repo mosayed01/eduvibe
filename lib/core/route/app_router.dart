@@ -9,6 +9,7 @@ import 'package:eduvibe/presentation/welcome/view/welcome_screen/welcome_screen.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../presentation/learn/learn_screen.dart';
 import '../../presentation/profile/cubit/profile_cubit.dart';
 import '../di/di.dart';
 
@@ -29,6 +30,8 @@ class AppRouter {
           create: (context) => getIt<ProfileCubit>()..getProfile(),
           child: ProfileScreen(),
         ));
+      case Routes.learnScreen:
+        return wrapWithPage(child: GridImage());
       case Routes.chatBotScreen:
         return wrapWithPage(
             child: BlocProvider(

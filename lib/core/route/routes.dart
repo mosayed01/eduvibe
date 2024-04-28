@@ -18,4 +18,5 @@ class Routes {
   static const String cameraScreen = '/cameraScreen'; // TODO: implement screen
   static const String calculatorScreen = '/calculatorScreen'; // TODO: implement screen
   static const String chatBotScreen = '/chatbotScreen';
+  static const String learnScreen= '/learnScreen';
 }
