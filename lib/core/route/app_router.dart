@@ -2,6 +2,7 @@ import 'package:eduvibe/core/route/page_wrapper.dart';
 import 'package:eduvibe/core/route/routes.dart';
 import 'package:eduvibe/presentation/chatbot/cubit/chatbot_cubit.dart';
 import 'package:eduvibe/presentation/chatbot/view/chatbot.dart';
+import 'package:eduvibe/presentation/courses/courses_screen.dart';
 import 'package:eduvibe/presentation/main/main_screen/main_screen.dart';
 import 'package:eduvibe/presentation/onboarding/onboarding_screen/onboarding_screen.dart';
 import 'package:eduvibe/presentation/profile/view/profile_screen.dart';
@@ -32,6 +33,8 @@ class AppRouter {
         ));
       case Routes.learnScreen:
         return wrapWithPage(child: GridImage());
+      case Routes.coursesScreen:
+        return wrapWithPage(child: GridImageCourse());
       case Routes.chatBotScreen:
         return wrapWithPage(
             child: BlocProvider(

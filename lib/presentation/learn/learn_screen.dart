@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../core/theme/ev_colors.dart';
+
 class GridImage extends StatefulWidget {
   const GridImage({super.key});
 
@@ -13,6 +15,12 @@ class _GridImageState extends State<GridImage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar:AppBar(
+          centerTitle: true,
+          title: Text('Learn'),
+          backgroundColor: EVColors.onBackground87Dark,
+          automaticallyImplyLeading: true,
+        ),
         body: Container(
           padding: EdgeInsets.all(16),
           child: GridView.builder(
