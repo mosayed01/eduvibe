@@ -24,6 +24,18 @@ class WelcomeScreen extends StatelessWidget {
               },
               child: const Text('profileScreen'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.learnScreen);
+              },
+              child: const Text('learnScreen'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.coursesScreen);
+              },
+              child: const Text('coursesScreen'),
+            ),
           ],
         ),
       ),
