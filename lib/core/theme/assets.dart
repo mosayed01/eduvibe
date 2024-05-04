@@ -12,4 +12,8 @@ class Assets {
   static const String phone = 'assets/svgs/phone.svg';
   static const String university = 'assets/svgs/university.svg';
   static const String send = 'assets/svgs/send.svg';
+  static const String chat = 'assets/svgs/ic_chat.svg';
+  static const String homeIcon = 'assets/svgs/ic_home.svg';
+  static const String learnIcon = 'assets/svgs/ic_learn.svg';
+  static const String settingsIcon = 'assets/svgs/ic_settings.svg';
 }
