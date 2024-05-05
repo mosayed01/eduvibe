@@ -6,11 +6,12 @@ class Routes {
   static const String loginScreen = '/loginScreen'; // TODO: implement screen
   static const String forgetPasswordScreen = '/forgetPasswordScreen'; // TODO: implement screen
   static const String resetPasswordScreen = '/resetPasswordScreen'; // TODO: implement screen
-  static const String mainScreen = '/mainScreen'; // TODO: implement screen
+  static const String mainScreen = '/mainScreen';
   static const String notificationsScreen = '/notificationsScreen'; // TODO: implement screen
   static const String profileScreen = '/profileScreen';
   static const String libraryScreen = '/libraryScreen'; // TODO: implement screen
   static const String coursesScreen = '/coursesScreen'; // TODO: implement screen
+  static const String courseDetailsScreen = '/courseDetailsScreen'; // TODO: implement screen
   static const String helpScreen = '/helpScreen'; // TODO: implement screen
   static const String notesScreen = '/notesScreen'; // TODO: implement screen
   static const String alarmScreen = '/alarmScreen'; // TODO: implement screen
