@@ -14,6 +14,10 @@ class EVColors {
   static const Color onBackground60Dark = Color(0x99FFFFFF);
   static const Color onBackground37Dark = Color(0x5EFFFFFF);
   static const Color onBackground16Dark = Color(0x29FFFFFF);
+
+  static const Color feature1 = Color(0xFFE7DBF9);
+  static const Color feature2 = Color(0xFFFFDCDC);
+  static const Color feature3 = Color(0xFFD2F5E4);
 }
 
 // region Helpers

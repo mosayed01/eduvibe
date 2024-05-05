@@ -8,6 +8,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../core/theme/assets.dart';
 import '../../chatbot/cubit/chatbot_cubit.dart';
+import '../../home/view/home_screen.dart';
 import '../../learn/learn_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   var _selectedIndex = 0;
   final _screens = <Widget>[
-    Center(child: const Text('Home')),
+    const HomeScreen(),
     const LearnScreen(),
     BlocProvider(
       create: (_) => getIt<ChatbotCubit>(),
