@@ -80,7 +80,6 @@ class _MainScreenState extends State<MainScreen> {
       icon: Container(
         height: 24.w,
         width: 24.w,
-        // padding: EdgeInsets.all(2.w),
         child: SvgPicture.asset(
           svgPath,
           colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
