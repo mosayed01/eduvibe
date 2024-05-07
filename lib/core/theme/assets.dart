@@ -31,7 +31,6 @@ class Assets {
   static const String notificationIcon = 'assets/svgs/ic_notification.svg';
   static const String rankIcon = 'assets/svgs/ic_rank.svg';
   static const String unionIcon = 'assets/svgs/ic_union.svg';
-  static const String alarm = 'assets/images/alarm.png';
   static const String prize = 'assets/images/prize.png';
   static const String topArrow = 'assets/images/top_arrow.png';
   static const String help = 'assets/svgs/help.svg';

@@ -25,6 +25,5 @@ class Routes {
   static const String writeNoteScreen = '/writeNoteScreen'; // TODO: implement screen
   static const String settingsScreen = '/settingsScreen'; // TODO: implement screen
   static const String notificationsSettingsScreen = '/notificationsSettingsScreen'; // TODO: implement screen
-  static const String courseDetailsScreen = '/courseDetailsScreen'; // TODO: implement screen
 
 }

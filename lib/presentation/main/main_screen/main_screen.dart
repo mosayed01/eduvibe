@@ -1,6 +1,7 @@
 import 'package:eduvibe/core/di/di.dart';
 import 'package:eduvibe/core/theme/ev_colors.dart';
 import 'package:eduvibe/presentation/chatbot/view/chatbot.dart';
+import 'package:eduvibe/settings/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
       create: (_) => getIt<ChatbotCubit>(),
       child: ChatbotScreen(),
     ),
-    Center(child: const Text('Settings')),
+    SettingsScreen(),
   ];
 
   @override
