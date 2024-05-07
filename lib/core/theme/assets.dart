@@ -13,4 +13,5 @@ class Assets {
   static const String phone = 'assets/svgs/phone.svg';
   static const String university = 'assets/svgs/university.svg';
   static const String send = 'assets/svgs/send.svg';
+
 }
