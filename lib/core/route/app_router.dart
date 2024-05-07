@@ -66,7 +66,7 @@ class AppRouter {
           child: ProfileScreen(),
         ));
       case Routes.learnScreen:
-        return wrapWithPage(child: GridImage());
+        return wrapWithPage(child: LearnScreen());
       case Routes.coursesScreen:
         return wrapWithPage(child: GridImageCourse());
       case Routes.notificationsScreen:

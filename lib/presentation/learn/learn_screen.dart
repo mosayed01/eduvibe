@@ -1,26 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-import '../../core/theme/ev_colors.dart';
-
-class GridImage extends StatefulWidget {
-  const GridImage({super.key});
+class LearnScreen extends StatefulWidget {
+  const LearnScreen({super.key});
 
   @override
-  State<GridImage> createState() => _GridImageState();
+  State<LearnScreen> createState() => _LearnScreenState();
 }
 
-class _GridImageState extends State<GridImage> {
+class _LearnScreenState extends State<LearnScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar:AppBar(
-          centerTitle: true,
-          title: Text('Learn'),
-          backgroundColor: EVColors.onBackground87Dark,
-          automaticallyImplyLeading: true,
-        ),
         body: Container(
           padding: EdgeInsets.all(16),
           child: GridView.builder(
