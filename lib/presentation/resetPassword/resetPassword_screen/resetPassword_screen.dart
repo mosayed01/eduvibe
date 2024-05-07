@@ -31,7 +31,6 @@ class ResetPasswordScreen extends StatelessWidget {
           child: ListView(
             children: [
               verticalSpacer(30),
-
               SvgPicture.asset(
                 Assets.book,
                 width: 64.w,

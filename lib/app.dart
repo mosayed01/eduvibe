@@ -8,6 +8,7 @@ import 'core/theme/theme.dart';
 import 'generated/l10n.dart';
 
 class MyApp extends StatelessWidget {
+
   const MyApp({
     super.key,
     required this.isLoggedIn,
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         initialRoute: isLoggedIn
             ? Routes.mainScreen
             : isFirstTime
-                ? Routes.onBoardingScreen
+                ? Routes.courseDetailsScreen
                 : Routes.welcomeScreen,
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),

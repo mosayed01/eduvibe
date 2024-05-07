@@ -1,5 +1,6 @@
 class Routes {
   static const String onBoardingScreen = '/onBoardingScreen';
+  static const String splashScreen = '/splashScreen';
   static const String welcomeScreen = '/welcomeScreen'; // TODO: implement screen
   static const String signUpScreen = '/signUpScreen'; // TODO: implement screen
   static const String otpScreen = '/otpScreen'; // TODO: implement screen
@@ -19,4 +20,10 @@ class Routes {
   static const String calculatorScreen = '/calculatorScreen'; // TODO: implement screen
   static const String chatBotScreen = '/chatbotScreen';
   static const String learnScreen= '/learnScreen';
+  static const String addNoteScreen = '/addNoteScreen'; // TODO: implement screen
+  static const String writeNoteScreen = '/writeNoteScreen'; // TODO: implement screen
+  static const String settingsScreen = '/settingsScreen'; // TODO: implement screen
+  static const String notificationsSettingsScreen = '/notificationsSettingsScreen'; // TODO: implement screen
+  static const String courseDetailsScreen = '/courseDetailsScreen'; // TODO: implement screen
+
 }
