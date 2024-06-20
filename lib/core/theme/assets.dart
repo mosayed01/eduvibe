@@ -1,8 +1,14 @@
+
+
 class Assets {
   static const String onboarding1 = 'assets/svgs/onboarding1.svg';
   static const String onboarding2 = 'assets/svgs/onboarding2.svg';
   static const String onboarding3 = 'assets/svgs/onboarding3.svg';
   static const String vibes = 'assets/svgs/vibes.svg';
+  static const String book = 'assets/svgs/book.svg';
+  static const String addNote = 'assets/svgs/addnote.svg';
+  static const String strategy = 'assets/svgs/strategy.svg';
+  static const String splash = 'assets/images/splash.png';
   static const String arrowBack = 'assets/svgs/arrow_back.svg';
   static const String edit = 'assets/svgs/edit.svg';
   static const String profile = 'assets/images/profile.png';
@@ -27,4 +33,18 @@ class Assets {
   static const String notificationIcon = 'assets/svgs/ic_notification.svg';
   static const String rankIcon = 'assets/svgs/ic_rank.svg';
   static const String unionIcon = 'assets/svgs/ic_union.svg';
+  static const String prize = 'assets/images/prize.png';
+  static const String topArrow = 'assets/images/top_arrow.png';
+  static const String help = 'assets/svgs/help.svg';
+  static const String person = 'assets/svgs/person.svg';
+  static const String lang = 'assets/svgs/lang.svg';
+  static const String notificationsSettings = 'assets/svgs/noti_settings.svg';
+  static const String theme = 'assets/svgs/theme.svg';
+  static const String logout = 'assets/svgs/logout.svg';
+  static const String php = 'assets/images/php.png';
+
+  static const String iconAlarm = 'assets/svgs/ic_alarm.svg';
+  static const String iconTimer = 'assets/svgs/ic_timer.svg';
+  static const String iconStopwatch = 'assets/svgs/ic_stopwatch.svg';
+  static const String iconWelcome = 'assets/svgs/ic_welcome.svg';
 }

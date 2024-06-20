@@ -32,7 +32,7 @@ class _HomeHeaderSectionState extends State<HomeHeaderSection> {
           IconButton(
             onPressed: () {
               // todo: uncomment this line when the notifications screen is ready
-              // Navigator.of(context).pushNamed(Routes.notificationsScreen);
+              Navigator.of(context).pushNamed(Routes.notificationsScreen);
             },
             icon: SvgPicture.asset(
               Assets.notificationIcon,

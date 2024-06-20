@@ -1,13 +1,14 @@
 import 'package:eduvibe/core/route/app_router.dart';
 import 'package:eduvibe/core/route/routes.dart';
-import 'package:eduvibe/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/theme/theme.dart';
+import 'generated/l10n.dart';
 
 class MyApp extends StatelessWidget {
+
   const MyApp({
     super.key,
     required this.isLoggedIn,
@@ -42,8 +43,8 @@ class MyApp extends StatelessWidget {
         initialRoute: isLoggedIn
             ? Routes.mainScreen
             : isFirstTime
-                ? Routes.onBoardingScreen
-                : Routes.welcomeScreen,
+                ? Routes.alarmScreen
+                : Routes.mainScreen,
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );

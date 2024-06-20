@@ -46,7 +46,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               padding: EdgeInsets.only(right: 16.w),
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed(Routes.welcomeScreen);
+                  Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
                 },
                 child: Text(
                   AppLocalizations.current.skip,
@@ -102,7 +102,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPressed: () {
                   if (_pageIndex == onboardingData.length - 1) {
                     Navigator.of(context)
-                        .pushReplacementNamed(Routes.welcomeScreen);
+                        .pushReplacementNamed(Routes.loginScreen);
                   } else {
                     _pageController.nextPage(
                       duration: const Duration(milliseconds: 300),

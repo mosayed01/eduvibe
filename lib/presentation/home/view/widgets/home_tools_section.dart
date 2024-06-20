@@ -35,7 +35,7 @@ class _HomeToolsSectionState extends State<HomeToolsSection> {
         _buildTool(
           context,
           Assets.note,
-          Routes.notesScreen,
+          Routes.addNoteScreen,
         ),
         _buildTool(
           context,
