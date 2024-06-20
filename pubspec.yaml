@@ -34,7 +34,9 @@ dependencies:
   cached_network_image: ^3.2.3
   carousel_slider: ^4.2.1
   shimmer: ^3.0.0
-#  floor: ^1.4.2
+  alarm: ^3.1.4
+  permission_handler: ^11.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

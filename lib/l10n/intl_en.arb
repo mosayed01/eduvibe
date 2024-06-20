@@ -52,5 +52,11 @@
   "typeSome": "Type something here...",
   "howCanIHelp": "How can i help you today?",
   "other": "Other",
-  "botStrategy": "Ask for study strategy"
+  "botStrategy": "Ask for study strategy",
+  "alarm": "Alarm",
+  "stopwatch": "Stopwatch",
+  "timer": "Timer",
+  "noAlarms": "No Alarms",
+  "setAlarm": "Set Alarm",
+  "alarmName": "Alarm Name"
 }

@@ -1,5 +1,11 @@
 import 'package:eduvibe/core/route/routes.dart';
+import 'package:eduvibe/core/theme/assets.dart';
+import 'package:eduvibe/core/theme/ev_colors.dart';
+import 'package:eduvibe/core/widget/primary_button.dart';
+import 'package:eduvibe/core/widget/spacers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -7,43 +13,41 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Welcome to Eduvibe'),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, Routes.chatBotScreen);
-              },
-              child: const Text('chatBotScreen'),
+            SvgPicture.asset(
+              Assets.iconWelcome,
+              width: 1.sw,
+              fit: BoxFit.contain,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, Routes.profileScreen);
-              },
-              child: const Text('profileScreen'),
+            verticalSpacer(60),
+             Text(
+              'Welcome to Eduvibe',
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: getOnBackground87(context),
+              ),
             ),
-            ElevatedButton(
+            const Spacer(),
+            PrimaryButton(
+              width: 0.8.sw,
               onPressed: () {
-                Navigator.pushNamed(context, Routes.learnScreen);
+                Navigator.pushNamed(context, Routes.loginScreen);
               },
-              child: const Text('learnScreen'),
+              text: 'Login',
             ),
-            ElevatedButton(
+            verticalSpacer(16),
+            PrimaryButton(
+              width: 0.8.sw,
               onPressed: () {
-                Navigator.pushNamed(context, Routes.coursesScreen);
+                Navigator.pushNamed(context, Routes.mainScreen);
               },
-              child: const Text('coursesScreen'),
+              text: 'As gust',
             ),
+            const Spacer(),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, Routes.mainScreen);
-        },
-        child: Icon(Icons.navigate_next_outlined),
       ),
     );
   }

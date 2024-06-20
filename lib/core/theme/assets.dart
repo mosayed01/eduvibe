@@ -1,3 +1,5 @@
+
+
 class Assets {
   static const String onboarding1 = 'assets/svgs/onboarding1.svg';
   static const String onboarding2 = 'assets/svgs/onboarding2.svg';
@@ -40,4 +42,9 @@ class Assets {
   static const String theme = 'assets/svgs/theme.svg';
   static const String logout = 'assets/svgs/logout.svg';
   static const String php = 'assets/images/php.png';
+
+  static const String iconAlarm = 'assets/svgs/ic_alarm.svg';
+  static const String iconTimer = 'assets/svgs/ic_timer.svg';
+  static const String iconStopwatch = 'assets/svgs/ic_stopwatch.svg';
+  static const String iconWelcome = 'assets/svgs/ic_welcome.svg';
 }

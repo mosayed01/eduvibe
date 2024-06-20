@@ -1,12 +1,10 @@
 import 'package:eduvibe/core/route/page_wrapper.dart';
 import 'package:eduvibe/core/route/routes.dart';
-import 'package:eduvibe/presentation/forgotPassword/forgotPassword_screen/forgotPassword_screen.dart';
-import 'package:eduvibe/presentation/login/login_screen/login_screen.dart';
-import 'package:eduvibe/presentation/forgotPassword/forgotPassword_screen/forgotPassword_screen.dart';
-import 'package:eduvibe/presentation/login/login_screen/login_screen.dart';
 import 'package:eduvibe/presentation/chatbot/cubit/chatbot_cubit.dart';
 import 'package:eduvibe/presentation/chatbot/view/chatbot.dart';
 import 'package:eduvibe/presentation/courses/courses_screen.dart';
+import 'package:eduvibe/presentation/forgotPassword/forgotPassword_screen/forgotPassword_screen.dart';
+import 'package:eduvibe/presentation/login/login_screen/login_screen.dart';
 import 'package:eduvibe/presentation/main/main_screen/main_screen.dart';
 import 'package:eduvibe/presentation/notifications/notifications.dart';
 import 'package:eduvibe/presentation/onboarding/onboarding_screen/onboarding_screen.dart';
@@ -14,24 +12,21 @@ import 'package:eduvibe/presentation/otp/otp_screen/otp_screen.dart';
 import 'package:eduvibe/presentation/profile/view/profile_screen.dart';
 import 'package:eduvibe/presentation/splash/splash_screen/splash_screen.dart';
 import 'package:eduvibe/presentation/strategies/study_strartegies.dart';
-import 'package:eduvibe/presentation/otp/otp_screen/otp_screen.dart';
 import 'package:eduvibe/presentation/welcome/view/welcome_screen/welcome_screen.dart';
 import 'package:eduvibe/settings/notifications_settings/notifications_settings.dart';
 import 'package:eduvibe/settings/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../presentation/alarm/view/alarm_screen.dart';
 import '../../presentation/courseDetails/courseDetailsScreen.dart';
 import '../../presentation/learn/learn_screen.dart';
-import '../../presentation/profile/cubit/profile_cubit.dart';
-import '../di/di.dart';
 import '../../presentation/notes/add_note/addNote_screen.dart';
 import '../../presentation/notes/writeNote/writeNote_screen.dart';
-
+import '../../presentation/profile/cubit/profile_cubit.dart';
 import '../../presentation/register/register_screen/register_screen.dart';
 import '../../presentation/resetPassword/resetPassword_screen/resetPassword_screen.dart';
-
-import '../../presentation/register/register_screen/register_screen.dart';
-import '../../presentation/resetPassword/resetPassword_screen/resetPassword_screen.dart';
+import '../di/di.dart';
 
 class AppRouter {
   static GlobalKey<NavigatorState> navigateKey = GlobalKey<NavigatorState>();
@@ -61,10 +56,13 @@ class AppRouter {
       case Routes.writeNoteScreen:
         return wrapWithPage(child: WriteNoteScreen());
       case Routes.profileScreen:
-        return wrapWithPage(child: BlocProvider(
+        return wrapWithPage(
+            child: BlocProvider(
           create: (context) => getIt<ProfileCubit>()..getProfile(),
           child: ProfileScreen(),
         ));
+      case Routes.alarmScreen:
+        return wrapWithPage(child: AlarmScreen());
       case Routes.learnScreen:
         return wrapWithPage(child: LearnScreen());
       case Routes.coursesScreen:
@@ -80,7 +78,8 @@ class AppRouter {
       case Routes.courseDetailsScreen:
         return wrapWithPage(child: CourseDetailsScreen());
       case Routes.chatBotScreen:
-        return wrapWithPage(child: BlocProvider(
+        return wrapWithPage(
+            child: BlocProvider(
           create: (context) => getIt<ChatbotCubit>(),
           child: ChatbotScreen(),
         ));
