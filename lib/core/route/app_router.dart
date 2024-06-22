@@ -23,8 +23,6 @@ import '../../presentation/Notes/notes/view/home/home_view.dart';
 import '../../presentation/alarm/view/alarm_screen.dart';
 import '../../presentation/courseDetails/courseDetailsScreen.dart';
 import '../../presentation/learn/learn_screen.dart';
-import '../../presentation/notes/add_note/addNote_screen.dart';
-import '../../presentation/notes/writeNote/writeNote_screen.dart';
 import '../../presentation/profile/cubit/profile_cubit.dart';
 import '../../presentation/register/register_screen/register_screen.dart';
 import '../../presentation/resetPassword/resetPassword_screen/resetPassword_screen.dart';

@@ -1,4 +1,5 @@
 
+import 'package:alarm/alarm.dart';
 import 'package:eduvibe/presentation/Notes/notes/models/task.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +12,7 @@ import 'core/di/di.dart';
 Future main() async {
 
   await ScreenUtil.ensureScreenSize();
+  Alarm.init();
   /// Initial Hive DB
   await Hive.initFlutter();
 

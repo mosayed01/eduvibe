@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
         initialRoute: isLoggedIn
             ? Routes.mainScreen
             : isFirstTime
-                ? Routes.alarmScreen
+                ? Routes.onBoardingScreen
                 : Routes.mainScreen,
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),

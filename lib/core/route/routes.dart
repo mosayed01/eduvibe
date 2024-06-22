@@ -1,12 +1,12 @@
 class Routes {
   static const String onBoardingScreen = '/onBoardingScreen';
   static const String splashScreen = '/splashScreen';
-  static const String welcomeScreen = '/welcomeScreen'; // TODO: implement screen
-  static const String signUpScreen = '/signUpScreen'; // TODO: implement screen
-  static const String otpScreen = '/otpScreen'; // TODO: implement screen
-  static const String loginScreen = '/loginScreen'; // TODO: implement screen
-  static const String forgetPasswordScreen = '/forgetPasswordScreen'; // TODO: implement screen
-  static const String resetPasswordScreen = '/resetPasswordScreen'; // TODO: implement screen
+  static const String welcomeScreen = '/welcomeScreen';
+  static const String signUpScreen = '/signUpScreen';
+  static const String otpScreen = '/otpScreen';
+  static const String loginScreen = '/loginScreen';
+  static const String forgetPasswordScreen = '/forgetPasswordScreen';
+  static const String resetPasswordScreen = '/resetPasswordScreen';
   static const String mainScreen = '/mainScreen';
   static const String notificationsScreen = '/notificationsScreen'; // TODO: implement screen
   static const String profileScreen = '/profileScreen';
