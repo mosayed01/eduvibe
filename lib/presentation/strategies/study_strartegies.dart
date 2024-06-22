@@ -28,7 +28,7 @@ class StudyStrategiesScreen extends StatelessWidget {
           icon:
               Icon(Icons.arrow_back, size: 24, color: EVColors.backgroundDark),
           onPressed: () {
-            Navigator.pushReplacementNamed(context, Routes.coursesScreen);
+            Navigator.pushReplacementNamed(context, Routes.mainScreen);
           },
         ),
       ),

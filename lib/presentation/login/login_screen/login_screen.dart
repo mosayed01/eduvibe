@@ -173,7 +173,7 @@ class LoginScreen extends StatelessWidget {
                       text: AppLocalizations.current.login,
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          Navigator.pushReplacementNamed(context, Routes.welcomeScreen);
+                          Navigator.pushReplacementNamed(context, Routes.mainScreen);
                         }
                       },
                     ),

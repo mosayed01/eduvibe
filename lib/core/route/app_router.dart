@@ -1,5 +1,6 @@
 import 'package:eduvibe/core/route/page_wrapper.dart';
 import 'package:eduvibe/core/route/routes.dart';
+import 'package:eduvibe/presentation/Calculator/caculator/calculator_screen.dart';
 import 'package:eduvibe/presentation/chatbot/cubit/chatbot_cubit.dart';
 import 'package:eduvibe/presentation/chatbot/view/chatbot.dart';
 import 'package:eduvibe/presentation/courses/courses_screen.dart';
@@ -18,6 +19,7 @@ import 'package:eduvibe/settings/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../presentation/Notes/notes/view/home/home_view.dart';
 import '../../presentation/alarm/view/alarm_screen.dart';
 import '../../presentation/courseDetails/courseDetailsScreen.dart';
 import '../../presentation/learn/learn_screen.dart';
@@ -52,9 +54,7 @@ class AppRouter {
       case Routes.resetPasswordScreen:
         return wrapWithPage(child: ResetPasswordScreen());
       case Routes.addNoteScreen:
-        return wrapWithPage(child: AddNoteScreen());
-      case Routes.writeNoteScreen:
-        return wrapWithPage(child: WriteNoteScreen());
+        return wrapWithPage(child: NoteScreen());
       case Routes.profileScreen:
         return wrapWithPage(
             child: BlocProvider(
@@ -77,6 +77,8 @@ class AppRouter {
         return wrapWithPage(child: NotificationsSettingsScreen());
       case Routes.courseDetailsScreen:
         return wrapWithPage(child: CourseDetailsScreen());
+      case Routes.calculatorScreen:
+        return wrapWithPage(child: Calculator());
       case Routes.chatBotScreen:
         return wrapWithPage(
             child: BlocProvider(
@@ -84,7 +86,7 @@ class AppRouter {
           child: ChatbotScreen(),
         ));
       default:
-        return wrapWithPage(child: WelcomeScreen());
+        return wrapWithPage(child: MainScreen());
     }
   }
 }
