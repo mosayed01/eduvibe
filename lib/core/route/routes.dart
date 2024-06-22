@@ -8,22 +8,21 @@ class Routes {
   static const String forgetPasswordScreen = '/forgetPasswordScreen';
   static const String resetPasswordScreen = '/resetPasswordScreen';
   static const String mainScreen = '/mainScreen';
-  static const String notificationsScreen = '/notificationsScreen'; // TODO: implement screen
+  static const String notificationsScreen = '/notificationsScreen';
   static const String profileScreen = '/profileScreen';
   static const String libraryScreen = '/libraryScreen'; // TODO: implement screen
-  static const String coursesScreen = '/coursesScreen'; // TODO: implement screen
-  static const String courseDetailsScreen = '/courseDetailsScreen'; // TODO: implement screen
+  static const String coursesScreen = '/coursesScreen';
+  static const String courseDetailsScreen = '/courseDetailsScreen';
   static const String helpScreen = '/helpScreen'; // TODO: implement screen
-  static const String notesScreen = '/notesScreen'; // TODO: implement screen
+  static const String notesScreen = '/notesScreen';
   static const String alarmScreen = '/alarmScreen';
-  static const String strategiesScreen = '/strategiesScreen'; // TODO: implement screen
+  static const String strategiesScreen = '/strategiesScreen';
   static const String cameraScreen = '/cameraScreen'; // TODO: implement screen
-  static const String calculatorScreen = '/calculatorScreen'; // TODO: implement screen
+  static const String calculatorScreen = '/calculatorScreen';
   static const String chatBotScreen = '/chatbotScreen';
   static const String learnScreen= '/learnScreen';
-  static const String addNoteScreen = '/addNoteScreen'; // TODO: implement screen
-  static const String writeNoteScreen = '/writeNoteScreen'; // TODO: implement screen
-  static const String settingsScreen = '/settingsScreen'; // TODO: implement screen
-  static const String notificationsSettingsScreen = '/notificationsSettingsScreen'; // TODO: implement screen
-
+  static const String addNoteScreen = '/addNoteScreen';
+  static const String writeNoteScreen = '/writeNoteScreen';
+  static const String settingsScreen = '/settingsScreen';
+  static const String notificationsSettingsScreen = '/notificationsSettingsScreen';
 }
