@@ -1,6 +1,7 @@
 import 'package:eduvibe/core/route/page_wrapper.dart';
 import 'package:eduvibe/core/route/routes.dart';
 import 'package:eduvibe/presentation/Calculator/caculator/calculator_screen.dart';
+import 'package:eduvibe/presentation/booksDetails/booksDetailsScreen.dart';
 import 'package:eduvibe/presentation/chatbot/cubit/chatbot_cubit.dart';
 import 'package:eduvibe/presentation/chatbot/view/chatbot.dart';
 import 'package:eduvibe/presentation/courses/courses_screen.dart';
@@ -75,6 +76,8 @@ class AppRouter {
         return wrapWithPage(child: NotificationsSettingsScreen());
       case Routes.courseDetailsScreen:
         return wrapWithPage(child: CourseDetailsScreen());
+      case Routes.courseDetailsScreen:
+        return wrapWithPage(child: BooksDetailsScreen());
       case Routes.calculatorScreen:
         return wrapWithPage(child: Calculator());
       case Routes.chatBotScreen:
