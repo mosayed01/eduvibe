@@ -14,7 +14,6 @@ class CoursesRepo implements ICoursesRepo {
   Future<List<Course>> getCourses() async {
     try {
       final response = await _dio.get(APIConstants.courses);
-      debugPrint("getCourses: ${response.data}");
       if (response.statusCode == 200) {
         List<Course> coursesDto = response.data != null
             ? List.from(response.data).map((e) => Course.fromJson(e)).toList()
@@ -36,6 +35,23 @@ class CoursesRepo implements ICoursesRepo {
         return Course.fromJson(response.data);
       } else {
         throw Exception("Failed to load course");
+      }
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  @override
+  Future<List<StudyStrategy>> getStudyStrategies() async {
+    try{
+      final response = await _dio.get(APIConstants.strategies);
+      if (response.statusCode == 200) {
+        List<StudyStrategy> studyStrategiesDto = response.data != null
+            ? List.from(response.data).map((e) => StudyStrategy.fromJson(e)).toList()
+            : [];
+        return studyStrategiesDto;
+      } else {
+        throw Exception("Failed to load study strategies");
       }
     } catch (e) {
       throw e;

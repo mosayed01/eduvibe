@@ -4,4 +4,5 @@ class APIConstants {
   static get register => "$BASE_URL/registration";
 
   static get courses => "$BASE_URL/courses";
+  static get strategies => "$BASE_URL/study-strategies";
 }
