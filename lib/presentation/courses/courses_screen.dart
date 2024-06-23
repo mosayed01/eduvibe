@@ -23,7 +23,6 @@ class _GridImageState extends State<GridImageCourse> {
           body: Container(
           padding: const EdgeInsets.all(16),
           child: GridView.builder(
-            physics: const BouncingScrollPhysics(),
             itemCount: 10,
             padding: const EdgeInsets.all(8),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
