@@ -324,7 +324,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildProfileImage(BuildContext context, String avatarUrl) {
     return InkWell(
       onTap: () {
-        // todo: change the profile image
         _pickImage();
       },
       borderRadius: BorderRadius.circular(0.22.sw),

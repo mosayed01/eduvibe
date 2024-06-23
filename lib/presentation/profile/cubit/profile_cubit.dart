@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:eduvibe/core/di/di.dart';
+import 'package:eduvibe/data/local/user_data_store.dart';
 import 'package:eduvibe/presentation/profile/cubit/profile_ui.dart';
 import 'package:equatable/equatable.dart';
 
@@ -6,6 +8,8 @@ part 'profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit() : super(ProfileLoading());
+
+  final UserHiveDataStore _userHiveDataStore = getIt();
 
   void getProfile() async {
     emit(ProfileLoading());
@@ -45,12 +49,13 @@ class ProfileCubit extends Cubit<ProfileState> {
   }
 
   Future<ProfileUI> _fetchProfile({String? name}) async {
+    final user = await _userHiveDataStore.getUser();
     return ProfileUI(
-      name: name ?? 'Radwa R. Abdallah',
-      email: 'Radwa@gmail.com',
+      name: name ?? ('${user?.firstname} ${user?.lastname}'),
+      email: user?.email ?? '',
       phone: '+201038475893',
       university: 'Cairo University',
-      avatar: 'https://i.pravatar.cc/150?img=1',
+      avatar: 'https://i.pravatar.cc/150?img=68',
       chartData: ChartData(
         ratio: 0.75,
         items: [
