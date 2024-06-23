@@ -21,6 +21,13 @@ void setup() {
 
   // region remote
   getIt.registerLazySingleton(() => Dio()
+    ..interceptors.add(InterceptorsWrapper(onRequest: (options, handler) async {
+      final user = await getIt<UserHiveDataStore>().getUser();
+      if (user != null) {
+        options.headers['Authorization'] = '${user.token}';
+      }
+      return handler.next(options);
+    }))
     ..interceptors.add(PrettyDioLogger(
       requestHeader: true,
       requestBody: true,
