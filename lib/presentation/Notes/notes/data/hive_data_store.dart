@@ -4,7 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 ///
 import '../models/task.dart';
 
-class HiveDataStore {
+class NotesHiveDataStore {
   static const boxName = "tasksBox";
   final Box<Task> box = Hive.box<Task>(boxName);
 

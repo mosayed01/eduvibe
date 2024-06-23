@@ -1,3 +1,7 @@
+import 'package:hive/hive.dart';
+
+part 'i_authentication_repo.g.dart';
+
 abstract class IAuthenticationRepo {
   Future<User> login(String email, String password);
 
@@ -8,13 +12,20 @@ abstract class IAuthenticationRepo {
   Future<void> logout();
 }
 
-class User {
-  final int id;
-  final String firstname;
-  final String lastname;
-  final String username;
-  final String email;
-  final String token;
+@HiveType(typeId: 1)
+class User extends HiveObject {
+  @HiveField(0)
+  final int? id;
+  @HiveField(1)
+  final String? firstname;
+  @HiveField(2)
+  final String? lastname;
+  @HiveField(3)
+  final String? username;
+  @HiveField(4)
+  final String? email;
+  @HiveField(5)
+  final String? token;
 
   User({
     required this.id,

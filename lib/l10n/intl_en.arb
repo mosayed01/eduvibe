@@ -58,5 +58,6 @@
   "timer": "Timer",
   "noAlarms": "No Alarms",
   "setAlarm": "Set Alarm",
-  "alarmName": "Alarm Name"
+  "alarmName": "Alarm Name",
+  "emailNotValid": "Email is not valid"
 }

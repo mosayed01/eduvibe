@@ -1,7 +1,8 @@
-import 'package:eduvibe/core/cubit/AuthCubit.dart';
-import 'package:eduvibe/core/cubit/AuthState.dart';
+import 'package:eduvibe/core/di/di.dart';
 import 'package:eduvibe/core/theme/assets.dart';
 import 'package:eduvibe/core/widget/primary_textfield.dart';
+import 'package:eduvibe/presentation/login/login_screen/login_cubit.dart';
+import 'package:eduvibe/presentation/login/login_screen/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,6 +16,7 @@ import '../../../core/widget/spacers.dart';
 import '../../../generated/l10n.dart';
 
 class SignUpScreen extends StatelessWidget {
+  final _cubit = getIt<LoginCubit>();
   final GlobalKey<FormState> formKey = GlobalKey();
   final TextEditingController _pass = TextEditingController();
   final TextEditingController email = TextEditingController();
@@ -39,8 +41,8 @@ class SignUpScreen extends StatelessWidget {
 
 
     return BlocProvider(
-        create: (context) => AuthCubit(),
-        child: BlocConsumer<AuthCubit, AuthState>(
+        create: (context) => _cubit,
+        child: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {},
           builder: (context, state) {
             return Scaffold(
@@ -220,9 +222,9 @@ class SignUpScreen extends StatelessWidget {
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton<String>(
                               focusColor: Colors.transparent,
-                              value: AuthCubit.get(context).selectedUniversity,
+                              value: _cubit.selectedUniversity,
                               onChanged: (newValue) {
-                                AuthCubit.get(context).changeOption(newValue);
+                                _cubit.changeOption(newValue);
                               },
                               dropdownColor: isDarkMode
                                   ? EVColors.backgroundDark
@@ -285,7 +287,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       Container(
                     // Your other widgets...
-                    child: (!_university.contains(AuthCubit.get(context).selectedUniversity)) ? const Padding(
+                    child: (!_university.contains(_cubit.selectedUniversity)) ? const Padding(
                       padding: EdgeInsets.only(bottom: 8.0, left: 40),
                       child: Text(
                         'Make sure to choose your university',
@@ -330,7 +332,7 @@ class SignUpScreen extends StatelessWidget {
                       PrimaryTextField(
                         hintText: AppLocalizations.current.password,
                         numForm: 24,
-                        obscureText: AuthCubit.get(context).isPass,
+                        obscureText: _cubit.isPass,
 
                         backgroundColor: isDarkMode
                             ? EVColors.backgroundDark
@@ -347,11 +349,11 @@ class SignUpScreen extends StatelessWidget {
                         width: 30.w,
                         suffix: IconButton(
                             onPressed: () {
-                              AuthCubit.get(context).changePass();
+                              _cubit.changePass();
 
                             },
                             icon:  Icon(
-                              AuthCubit.get(context).suffix,
+                              _cubit.suffix,
                               color: EVColors.onBackground60Light,
                             )),
                         controller: _pass,
@@ -374,7 +376,7 @@ class SignUpScreen extends StatelessWidget {
                         width: 30.w,
                         hintText: AppLocalizations.current.confirmPass,
                         numForm: 24,
-                        obscureText: AuthCubit.get(context).isPass2,
+                        obscureText: _cubit.isPass2,
                         backgroundColor: isDarkMode
                             ? EVColors.backgroundDark
                             : EVColors.backgroundLight,
@@ -389,10 +391,10 @@ class SignUpScreen extends StatelessWidget {
                             : EVColors.primaryLight,
                         suffix: IconButton(
                             onPressed: () {
-                              AuthCubit.get(context).changePass2();
+                              _cubit.changePass2();
                             },
                             icon:  Icon(
-                              AuthCubit.get(context).suffix2,
+                              _cubit.suffix2,
                               color: EVColors.onBackground60Light,
                             )),
                         controller: _repeatedPass,

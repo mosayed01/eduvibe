@@ -10,7 +10,7 @@ import 'generated/l10n.dart';
 
 class BaseWidget extends InheritedWidget {
   BaseWidget({Key? key, required this.child}) : super(key: key, child: child);
-  final HiveDataStore dataStore = HiveDataStore();
+  final NotesHiveDataStore dataStore = NotesHiveDataStore();
   final Widget child;
 
   static BaseWidget of(BuildContext context) {
@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
             ? Routes.mainScreen
             : isFirstTime
                 ? Routes.onBoardingScreen
-                : Routes.mainScreen,
+                : Routes.loginScreen,
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );
