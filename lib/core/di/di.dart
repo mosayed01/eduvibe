@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:eduvibe/data/local/user_data_store.dart';
+import 'package:eduvibe/data/remote/courses_repo.dart';
 import 'package:eduvibe/domain/authentication/i_authentication_repo.dart';
+import 'package:eduvibe/domain/i_courses_repo.dart';
 import 'package:eduvibe/presentation/login/login_screen/login_cubit.dart';
 import 'package:eduvibe/presentation/register/register_screen/register_cubit.dart';
 import 'package:get_it/get_it.dart';
@@ -32,17 +34,17 @@ void setup() {
       requestHeader: true,
       requestBody: true,
       responseBody: true,
-      responseHeader: false,
+      responseHeader: true,
       error: true,
       compact: true,
     )));
   // endregion
 
   // region Repositories
+  getIt.registerLazySingleton<ICoursesRepo>(() => CoursesRepo(getIt<Dio>()));
   getIt.registerLazySingleton<IChatRepo>(() => ChatRepo(getIt<Dio>()));
   getIt.registerLazySingleton<IAuthenticationRepo>(
       () => AuthenticationRepo(getIt<Dio>(), getIt<UserHiveDataStore>()));
-
   // endregion
 
   // region Cubits

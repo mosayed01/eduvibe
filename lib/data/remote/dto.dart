@@ -171,21 +171,6 @@ class SafetyRatings {
   }
 }
 
-/**
- *  {
-    "id": "fA9QDwAAQBAJ",
-    "title": "The Cucumber Book",
-    "authors": [
-    "Matt Wynne",
-    "Aslak Hellesoy",
-    "Steve Tooke"
-    ],
-    "description": "Your customers want rock-solid, bug-free software that does exactly what they expect it to do. Yet they can't always articulate their ideas clearly enough for you to turn them into code. You need Cucumber: a testing, communication, and requirements tool-all rolled into one. All the code in this book is updated for Cucumber 2.4, Rails 5, and RSpec 3.5. Express your customers' wild ideas as a set of clear, executable specifications that everyone on the team can read. Feed those examples into Cucumber and let it guide your development. Build just the right code to keep your customers happy. You can use Cucumber to test almost any system or any platform. Get started by using the core features of Cucumber and working with Cucumber's Gherkin DSL to describe-in plain language-the behavior your customers want from the system. Then write Ruby code that interprets those plain-language specifications and checks them against your application. Next, consolidate the knowledge you've gained with a worked example, where you'll learn more advanced Cucumber techniques, test asynchronous systems, and test systems that use a database. Recipes highlight some of the most difficult and commonly seen situations the authors have helped teams solve. With these patterns and techniques, test Ajax-heavy web applications with Capybara and Selenium, REST web services, Ruby on Rails applications, command-line applications, legacy applications, and more. Written by the creator of Cucumber and the co-founders of Cucumber Ltd., this authoritative guide will give you and your team all the knowledge you need to start using Cucumber with confidence. What You Need: Windows, Mac OS X (with XCode) or Linux, Ruby 1.9.2 and upwards, Cucumber 2.4, Rails 5, and RSpec 3.5",
-    "genre": "[Computers]",
-    "publishedDate": "2017-02-17"
-    },
- */
-
 class Book {
   Book({
     required this.id,
@@ -238,6 +223,75 @@ class BookDto {
   Map<String, dynamic> toJson() {
     final _data = <String, dynamic>{};
     _data['books'] = books.map((e) => e.toJson()).toList();
+    return _data;
+  }
+}
+
+class Course {
+  Course({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.books,
+    required this.studyStrategies,
+  });
+
+  late final int id;
+  late final String? name;
+  late final String? description;
+  late final List<Book>? books;
+  late final List<StudyStrategy>? studyStrategies;
+
+  factory Course.fromJson(Map<String, dynamic> json) {
+    return Course(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      books: json['books'] != null
+          ? List.from(json['books']).map((e) => Book.fromJson(e)).toList()
+          : null,
+      studyStrategies: json['studyStrategies'] != null
+          ? List.from(json['studyStrategies'])
+              .map((e) => StudyStrategy.fromJson(e))
+              .toList()
+          : null,
+    );
+  }
+
+
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['id'] = id;
+    _data['name'] = name;
+    _data['description'] = description;
+    _data['books'] = books;
+    _data['studyStrategies'] = studyStrategies;
+    return _data;
+  }
+}
+
+class StudyStrategy {
+  StudyStrategy({
+    required this.id,
+    required this.name,
+    required this.description,
+  });
+
+  late final int id;
+  late final String name;
+  late final String description;
+
+  StudyStrategy.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    description = json['description'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['id'] = id;
+    _data['name'] = name;
+    _data['description'] = description;
     return _data;
   }
 }

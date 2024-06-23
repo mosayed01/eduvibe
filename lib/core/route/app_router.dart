@@ -74,7 +74,8 @@ class AppRouter {
       case Routes.notificationsSettingsScreen:
         return wrapWithPage(child: NotificationsSettingsScreen());
       case Routes.courseDetailsScreen:
-        return wrapWithPage(child: CourseDetailsScreen());
+        final id = settings.arguments as String;
+        return wrapWithPage(child: CourseDetailsScreen(id: id));
       case Routes.calculatorScreen:
         return wrapWithPage(child: Calculator());
       case Routes.chatBotScreen:
