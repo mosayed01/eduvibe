@@ -1,8 +1,12 @@
+import 'dart:math';
+
 import 'package:eduvibe/core/di/di.dart';
 import 'package:eduvibe/core/theme/assets.dart';
 import 'package:eduvibe/core/widget/primary_textfield.dart';
 import 'package:eduvibe/presentation/login/login_screen/login_cubit.dart';
 import 'package:eduvibe/presentation/login/login_screen/login_state.dart';
+import 'package:eduvibe/presentation/register/register_screen/register_cubit.dart';
+import 'package:eduvibe/presentation/register/register_screen/register_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,10 +17,11 @@ import '../../../core/route/routes.dart';
 import '../../../core/theme/ev_colors.dart';
 import '../../../core/widget/primary_button.dart';
 import '../../../core/widget/spacers.dart';
+import '../../../domain/authentication/i_authentication_repo.dart';
 import '../../../generated/l10n.dart';
 
 class SignUpScreen extends StatelessWidget {
-  final _cubit = getIt<LoginCubit>();
+  final _cubit = getIt<RegisterCubit>();
   final GlobalKey<FormState> formKey = GlobalKey();
   final TextEditingController _pass = TextEditingController();
   final TextEditingController email = TextEditingController();
@@ -39,11 +44,21 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
-
     return BlocProvider(
         create: (context) => _cubit,
-        child: BlocConsumer<LoginCubit, LoginState>(
-          listener: (context, state) {},
+        child: BlocConsumer<RegisterCubit, RegisterState>(
+          listener: (context, state) {
+            if (state is RegisterSuccess) {
+              Navigator.pushReplacementNamed(context, Routes.loginScreen);
+            }
+            if (state is RegisterError) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(state.message),
+                ),
+              );
+            }
+          },
           builder: (context, state) {
             return Scaffold(
               backgroundColor: isDarkMode
@@ -83,7 +98,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       verticalSpacer(20),
                       Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
+                        padding: EdgeInsets.symmetric(horizontal: 20.0.w),
                         child: Row(
                           children: [
                             Expanded(
@@ -107,9 +122,11 @@ class SignUpScreen extends StatelessWidget {
                                 controller: user,
                                 valid: (value) {
                                   if (value!.isEmpty) {
-                                    return AppLocalizations.current.fieldRequired;
+                                    return AppLocalizations
+                                        .current.fieldRequired;
                                   } else if (value.length <= 2) {
-                                    return AppLocalizations.current.uTypedLessThan2ch;
+                                    return AppLocalizations
+                                        .current.uTypedLessThan2ch;
                                   }
                                   return null;
                                 },
@@ -137,9 +154,11 @@ class SignUpScreen extends StatelessWidget {
                                 controller: user1,
                                 valid: (value) {
                                   if (value!.isEmpty) {
-                                    return AppLocalizations.current.fieldRequired;
+                                    return AppLocalizations
+                                        .current.fieldRequired;
                                   } else if (value.length <= 2) {
-                                    return AppLocalizations.current.uTypedLessThan2ch;
+                                    return AppLocalizations
+                                        .current.uTypedLessThan2ch;
                                   }
                                   return null;
                                 },
@@ -169,7 +188,8 @@ class SignUpScreen extends StatelessWidget {
                                 if (value!.isEmpty) {
                                   return AppLocalizations.current.fieldRequired;
                                 } else if (value.length <= 11) {
-                                  return AppLocalizations.current.uTypedLessThan11ch;
+                                  return AppLocalizations
+                                      .current.uTypedLessThan11ch;
                                 }
                                 return null;
                               },
@@ -286,17 +306,19 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                    // Your other widgets...
-                    child: (!_university.contains(_cubit.selectedUniversity)) ? const Padding(
-                      padding: EdgeInsets.only(bottom: 8.0, left: 40),
-                      child: Text(
-                        'Make sure to choose your university',
-                        style: TextStyle(
-                            fontSize: 12, color: Colors.red),
+                        // Your other widgets...
+                        child: (!_university
+                                .contains(_cubit.selectedUniversity))
+                            ? const Padding(
+                                padding: EdgeInsets.only(bottom: 8.0, left: 40),
+                                child: Text(
+                                  'Make sure to choose your university',
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.red),
+                                ),
+                              )
+                            : Container(),
                       ),
-                    )
-                        : Container(),
-                  ),
                       /////////////////////////////////////////////////////////
                       const SizedBox(
                         height: 20,
@@ -333,7 +355,6 @@ class SignUpScreen extends StatelessWidget {
                         hintText: AppLocalizations.current.password,
                         numForm: 24,
                         obscureText: _cubit.isPass,
-
                         backgroundColor: isDarkMode
                             ? EVColors.backgroundDark
                             : EVColors.backgroundLight,
@@ -350,9 +371,8 @@ class SignUpScreen extends StatelessWidget {
                         suffix: IconButton(
                             onPressed: () {
                               _cubit.changePass();
-
                             },
-                            icon:  Icon(
+                            icon: Icon(
                               _cubit.suffix,
                               color: EVColors.onBackground60Light,
                             )),
@@ -361,11 +381,14 @@ class SignUpScreen extends StatelessWidget {
                           if (value!.isEmpty) {
                             return AppLocalizations.current.fieldRequired;
                           } else if (value.length <= 7) {
-                            return AppLocalizations.current.passwordShouldContainMore8ch;
+                            return AppLocalizations
+                                .current.passwordShouldContainMore8ch;
                           } else if (value == user.text) {
-                            return AppLocalizations.current.passwordMatchFirstName;
+                            return AppLocalizations
+                                .current.passwordMatchFirstName;
                           } else if (value == user1.text) {
-                            return AppLocalizations.current.passwordMatchLastName;
+                            return AppLocalizations
+                                .current.passwordMatchLastName;
                           }
                           return null;
                         },
@@ -393,7 +416,7 @@ class SignUpScreen extends StatelessWidget {
                             onPressed: () {
                               _cubit.changePass2();
                             },
-                            icon:  Icon(
+                            icon: Icon(
                               _cubit.suffix2,
                               color: EVColors.onBackground60Light,
                             )),
@@ -404,7 +427,8 @@ class SignUpScreen extends StatelessWidget {
                           } else if (val != _pass.text) {
                             return AppLocalizations.current.notMatch;
                           } else if (val.length <= 7) {
-                            return AppLocalizations.current.passwordShouldContainMore8ch;
+                            return AppLocalizations
+                                .current.passwordShouldContainMore8ch;
                           }
                           return null;
                         },
@@ -421,7 +445,19 @@ class SignUpScreen extends StatelessWidget {
                         text: AppLocalizations.current.signUp,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                              Navigator.pushReplacementNamed(context, Routes.mainScreen);
+                            if (_university
+                                .contains(_cubit.selectedUniversity)) {
+                              _cubit.register(UserRegistration(
+                                email: email.text,
+                                password: _pass.text,
+                                firstname: user.text,
+                                lastname: user1.text,
+                                username: user.text +
+                                    user1.text +
+                                    Random().nextInt(1000).toString(),
+                                // university: _cubit.selectedUniversity,
+                              ));
+                            }
                           }
                         },
                       ),

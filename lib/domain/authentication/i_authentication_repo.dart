@@ -5,7 +5,7 @@ part 'i_authentication_repo.g.dart';
 abstract class IAuthenticationRepo {
   Future<User> login(String email, String password);
 
-  Future<User> register(User user);
+  Future<bool> register(UserRegistration user);
 
   Future<User> getCurrentUser();
 
@@ -56,5 +56,45 @@ class User extends HiveObject {
       'email': email,
       'token': token,
     };
+  }
+}
+
+class UserRegistration {
+  final String? firstname;
+  final String? lastname;
+  final String? username;
+  final String? email;
+  final String? password;
+  final String? role;
+
+  UserRegistration({
+    required this.firstname,
+    required this.lastname,
+    required this.username,
+    required this.email,
+    required this.password,
+    this.role = "USER",
+  });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'firstname': firstname,
+      'lastname': lastname,
+      'username': username,
+      'email': email,
+      'password': password,
+      'role': role,
+    };
+  }
+
+  factory UserRegistration.fromJson(Map<String, dynamic> json) {
+    return UserRegistration(
+      firstname: json['firstname'],
+      lastname: json['lastname'],
+      username: json['username'],
+      email: json['email'],
+      password: json['password'],
+      role: json['role'],
+    );
   }
 }

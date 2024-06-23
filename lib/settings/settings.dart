@@ -1,9 +1,9 @@
+import 'package:eduvibe/core/di/di.dart';
 import 'package:eduvibe/core/route/routes.dart';
 import 'package:eduvibe/core/theme/ev_colors.dart';
 import 'package:eduvibe/core/widget/spacers.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:eduvibe/domain/authentication/i_authentication_repo.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -261,7 +261,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               verticalSpacer(24.h),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  getIt<IAuthenticationRepo>().logout();
+                },
                 child: Container(
                   width: double.infinity,
                   height: 56.h,

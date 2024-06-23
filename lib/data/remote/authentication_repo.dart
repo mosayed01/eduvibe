@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:eduvibe/core/route/navigator_helper.dart';
+import 'package:eduvibe/core/route/routes.dart';
 import 'package:eduvibe/core/utils.dart';
 import 'package:eduvibe/domain/authentication/i_authentication_repo.dart';
 
@@ -29,20 +31,39 @@ class AuthenticationRepo implements IAuthenticationRepo {
   }
 
   @override
-  Future<User> getCurrentUser() {
-    // TODO: implement getCurrentUser
-    throw UnimplementedError();
+  Future<User> getCurrentUser() async {
+    final user = await _dataStore.getUser();
+
+    if (user != null) {
+      return Future.value(user);
+    } else {
+      throw Exception('User not found');
+    }
   }
 
   @override
-  Future<void> logout() {
-    // TODO: implement logout
-    throw UnimplementedError();
+  Future<void> logout() async {
+    final user = await _dataStore.getUser();
+    if (user != null) {
+      await _dataStore.deleteUser(user: user);
+      NavigatorHelper.pushNamedAndRemoveUntil(
+        Routes.loginScreen,
+      );
+    }
   }
 
   @override
-  Future<User> register(User user) {
-    // TODO: implement register
-    throw UnimplementedError();
+  Future<bool> register(UserRegistration user) async {
+    try {
+      final response = await _dio.post(APIConstants.register,
+          data: user.toJson());
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        throw Exception('Failed to login');
+      }
+    } catch (e) {
+      throw e;
+    }
   }
 }
