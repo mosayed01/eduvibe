@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../core/di/di.dart';
 import '../../../../core/route/routes.dart';
 import '../../../../core/theme/assets.dart';
 import '../../../../core/theme/ev_colors.dart';
 import '../../../../core/widget/spacers.dart';
+import '../../../../data/local/user_data_store.dart';
+import '../../../../domain/authentication/i_authentication_repo.dart';
 
 class HomeHeaderSection extends StatefulWidget {
   const HomeHeaderSection({super.key});
@@ -15,11 +18,24 @@ class HomeHeaderSection extends StatefulWidget {
 }
 
 class _HomeHeaderSectionState extends State<HomeHeaderSection> {
+  User? user;
+
+  @override
+  void initState() {
+    super.initState();
+    getIt<UserHiveDataStore>().getUser().then(
+      (value) {
+        setState(() {
+          user = value;
+        });
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return _buildHeader(context);
   }
-
 
   // region Header
   Widget _buildHeader(BuildContext context) {
@@ -31,7 +47,6 @@ class _HomeHeaderSectionState extends State<HomeHeaderSection> {
           _buildGreeting(context),
           IconButton(
             onPressed: () {
-              // todo: uncomment this line when the notifications screen is ready
               Navigator.of(context).pushNamed(Routes.notificationsScreen);
             },
             icon: SvgPicture.asset(
@@ -50,7 +65,7 @@ class _HomeHeaderSectionState extends State<HomeHeaderSection> {
   }
 
   Widget _buildGreeting(BuildContext context) {
-    final name = 'Mohammed';
+    final name = user?.firstname ?? 'Mohammed';
     final image = Container(
       padding: EdgeInsets.all(12.w),
       decoration: ShapeDecoration(
@@ -60,27 +75,37 @@ class _HomeHeaderSectionState extends State<HomeHeaderSection> {
       child: Text(
         name[0],
         style: Theme.of(context).textTheme.titleSmall?.copyWith(
-          color: Colors.white,
-        ),
+              color: Colors.white,
+            ),
       ),
     );
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed(Routes.profileScreen);
-          },
-          child: image,
-        ),
-        horizontalSpacer(8),
-        Text(
-          'Hello $name!',
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            color: getOnBackground87(context),
+        if (user == null)
+          SizedBox(
+              width: 20.w,
+              height: 20.w,
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                color: Theme.of(context).primaryColor,
+              )),
+        if (user != null) ...[
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(Routes.profileScreen);
+            },
+            child: image,
           ),
-        )
+          horizontalSpacer(8),
+          Text(
+            'Hello $name!',
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: getOnBackground87(context),
+                ),
+          )
+        ]
       ],
     );
   }
