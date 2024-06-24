@@ -94,7 +94,7 @@ class _HomeBooksSectionState extends State<HomeBooksSection> {
     return GestureDetector(
       onTap: () {
         Navigator.of(context)
-            .pushNamed(Routes.BooksDetailsScreen, arguments: books.id);
+            .pushNamed(Routes.booksDetailsScreen, arguments: books.id);
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,

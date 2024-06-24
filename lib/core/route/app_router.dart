@@ -76,7 +76,7 @@ class AppRouter {
         return wrapWithPage(child: NotificationsSettingsScreen());
       case Routes.courseDetailsScreen:
         return wrapWithPage(child: CourseDetailsScreen());
-      case Routes.courseDetailsScreen:
+      case Routes.booksDetailsScreen:
         return wrapWithPage(child: BooksDetailsScreen());
       case Routes.calculatorScreen:
         return wrapWithPage(child: Calculator());
