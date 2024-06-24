@@ -29,11 +29,6 @@ class _HomeToolsSectionState extends State<HomeToolsSection> {
         ),
         _buildTool(
           context,
-          Assets.camera,
-          Routes.cameraScreen,
-        ),
-        _buildTool(
-          context,
           Assets.note,
           Routes.addNoteScreen,
         ),

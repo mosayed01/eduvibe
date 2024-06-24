@@ -55,4 +55,20 @@ class Assets {
   static const String Sql = 'assets/images/sql.jpg';
   static const String wordPress = 'assets/images/w.jpg';
 
+  static const String swift = 'assets/images/swift.jpg';
+  static const String solid = 'assets/images/solid.jpg';
+  static const String datasc = 'assets/images/datasc.jpg';
+  static const String math = 'assets/images/math.jpg';
+
+
+  static const String algo = 'assets/images/algo.jpg';
+  static const String autom = 'assets/images/autom.jpg';
+  static const String comp = 'assets/images/comp.jpg';
+  static const String xamarien = 'assets/images/xamarien.jpg';
+  static const String database = 'assets/images/database.jpg';
+
+
+
+
+
 }

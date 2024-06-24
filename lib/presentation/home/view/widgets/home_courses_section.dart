@@ -30,21 +30,18 @@ class _HomeCoursesSectionState extends State<HomeCoursesSection> {
           'Recent Courses',
           [
             Course(
-              title: 'Mathematics',
               description: 'Learn Mathematics',
-              iconPath: getRandomPath(),
+              iconPath: Assets.springBoot,
               id: '1',
             ),
             Course(
-              title: 'Physics',
               description: 'Learn Physics',
-              iconPath: getRandomPath(),
+              iconPath: Assets.math,
               id: '2',
             ),
             Course(
-              title: 'Chemistry',
               description: 'Learn Chemistry',
-              iconPath: getRandomPath(),
+              iconPath: Assets.swift,
               id: '3',
             ),
           ],
@@ -55,21 +52,18 @@ class _HomeCoursesSectionState extends State<HomeCoursesSection> {
           'Favorite',
           [
             Course(
-              title: 'Biology',
               description: 'Learn Biology',
-              iconPath: getRandomPath(),
+              iconPath: Assets.solid,
               id: '4',
             ),
             Course(
-              title: 'History',
               description: 'Learn History',
-              iconPath: getRandomPath(),
+              iconPath: Assets.Sql,
               id: '5',
             ),
             Course(
-              title: 'Geography',
               description: 'Learn Geography',
-              iconPath: getRandomPath(),
+              iconPath: Assets.datasc,
               id: '6',
             ),
           ],
@@ -80,21 +74,18 @@ class _HomeCoursesSectionState extends State<HomeCoursesSection> {
           'New Courses',
           [
             Course(
-              title: 'Mathematics',
               description: 'Learn Mathematics',
-              iconPath: getRandomPath(),
+              iconPath: Assets.database,
               id: '7',
             ),
             Course(
-              title: 'Physics',
               description: 'Learn Physics',
-              iconPath: getRandomPath(),
+              iconPath: Assets.xamarien,
               id: '8',
             ),
             Course(
-              title: 'Chemistry',
               description: 'Learn Chemistry',
-              iconPath: getRandomPath(),
+              iconPath: Assets.comp,
               id: '9',
             ),
           ],
@@ -158,14 +149,7 @@ class _HomeCoursesSectionState extends State<HomeCoursesSection> {
             Container(
               alignment: Alignment.center,
               width: 200.w,
-              child: Text(
-                course.title,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: getOnBackground87(context),
-                    ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
+
             ),
           ],
         ));
@@ -176,12 +160,10 @@ class _HomeCoursesSectionState extends State<HomeCoursesSection> {
 
 class Course {
   final String id;
-  final String title;
   final String description;
   final String iconPath;
 
   Course({
-    required this.title,
     required this.description,
     required this.iconPath,
     required this.id,

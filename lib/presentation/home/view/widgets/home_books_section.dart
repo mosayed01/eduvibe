@@ -33,21 +33,18 @@ class _HomeBooksSectionState extends State<HomeBooksSection> {
           'Recent Books',
           [
             Books(
-              title: 'Mathematics',
               description: 'Learn Mathematics',
-              iconPath: getRandomPath(),
+              iconPath: Assets.autom,
               id: '1',
             ),
             Books(
-              title: 'Physics',
               description: 'Learn Physics',
-              iconPath: getRandomPath(),
+              iconPath: Assets.algo,
               id: '2',
             ),
             Books(
-              title: 'Chemistry',
               description: 'Learn Chemistry',
-              iconPath: getRandomPath(),
+              iconPath: Assets.math,
               id: '3',
             ),
           ],
@@ -105,7 +102,7 @@ class _HomeBooksSectionState extends State<HomeBooksSection> {
           ClipRRect(
             borderRadius: BorderRadius.circular(24.r),
             child: Image.asset(
-              getRandomPath(),
+              books.iconPath,
               width: 140.w,
               height: 180.h,
               fit: BoxFit.cover,
@@ -120,12 +117,10 @@ class _HomeBooksSectionState extends State<HomeBooksSection> {
 
 class Books {
   final String id;
-  final String title;
   final String description;
   final String iconPath;
 
   Books({
-    required this.title,
     required this.description,
     required this.iconPath,
     required this.id,
@@ -133,11 +128,11 @@ class Books {
 }
 List<String> imgs = [
   Assets.micro,
+  Assets.flutter,
   Assets.Ai,
   Assets.Sql,
   Assets.wordPress,
   Assets.springBoot,
-  Assets.flutter,
   Assets.android
 ];
 

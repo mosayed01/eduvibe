@@ -3,6 +3,7 @@ import 'package:eduvibe/domain/i_courses_repo.dart';
 import 'package:eduvibe/presentation/home/view/widgets/home_books_section.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/theme/assets.dart';
 import '../../data/remote/dto.dart';
 
 class LearnScreen extends StatefulWidget {
@@ -17,7 +18,15 @@ class _LearnScreenState extends State<LearnScreen> {
   List<Course> _list=[];
 
   final ICoursesRepo _coursesRepo = getIt();
-
+  List<String> imgs = [
+    Assets.Ai,
+    Assets.flutter,
+    Assets.Sql,
+    Assets.wordPress,
+    Assets.micro,
+    Assets.springBoot,
+    Assets.android
+  ];
 
   @override
   void initState() {
@@ -36,14 +45,16 @@ class _LearnScreenState extends State<LearnScreen> {
           child: GridView.builder(
             physics: BouncingScrollPhysics(),
             itemCount: _list.length,
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(12),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5
             ),
             itemBuilder: (context, index) {
               return Wrap(
                 children: [
-                  Image.asset(getRandomPath(),),
+                  Image.asset(imgs[index],height: 180,
+                    fit: BoxFit.fill,
+                      ),
                   Text(_list[index].name ?? '',maxLines: 2,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),)
                 ],
               );

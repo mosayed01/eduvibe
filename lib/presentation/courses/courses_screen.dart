@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../core/di/di.dart';
+import '../../core/theme/assets.dart';
 import '../home/view/widgets/home_books_section.dart';
 
 class GridImageCourse extends StatefulWidget {
@@ -29,7 +30,15 @@ class _GridImageState extends State<GridImageCourse> {
       });
     });
   }
-
+  List<String> imgs = [
+    Assets.Ai,
+    Assets.flutter,
+    Assets.Sql,
+    Assets.wordPress,
+    Assets.micro,
+    Assets.springBoot,
+    Assets.android
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +65,7 @@ class _GridImageState extends State<GridImageCourse> {
               child: Wrap(
                 children: [
                   Image.asset(
-                    getRandomPath(),
+                    imgs[index],
                     height: 180,
                     fit: BoxFit.fill,
                   ),
