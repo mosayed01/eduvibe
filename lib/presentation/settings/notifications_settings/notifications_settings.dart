@@ -1,13 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/theme/assets.dart';
-import '../../core/theme/ev_colors.dart';
-import '../../core/widget/spacers.dart';
+import '../../../core/theme/assets.dart';
+import '../../../core/theme/ev_colors.dart';
+import '../../../core/widget/spacers.dart';
+
 
 class NotificationsSettingsScreen extends StatelessWidget {
    NotificationsSettingsScreen({Key? key}) : super(key: key);

@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:eduvibe/core/theme/assets.dart';
 import 'package:eduvibe/core/widget/primary_button.dart';
 import 'package:eduvibe/core/widget/spacers.dart';
+import 'package:eduvibe/presentation/home/view/widgets/home_books_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -48,7 +49,7 @@ class BooksDetailsScreen extends StatelessWidget {
               },
               blendMode: BlendMode.dstIn,
               child: Image.asset(
-                Assets.php,
+                getRandomPath(),
                 width: 365.0.w,
                 height: 365.0.h,
                 fit: BoxFit.cover,
@@ -98,7 +99,7 @@ class BooksDetailsScreen extends StatelessWidget {
                           borderRadius:
                           BorderRadius.all(Radius.circular(24.0.r)),
                           child: Image.asset(
-                            Assets.php,
+                            getRandomPath(),
                             width: 140.0.w,
                             height: 180.0.h,
                             fit: BoxFit.cover,

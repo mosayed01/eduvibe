@@ -15,8 +15,6 @@ import 'package:eduvibe/presentation/profile/view/profile_screen.dart';
 import 'package:eduvibe/presentation/splash/splash_screen/splash_screen.dart';
 import 'package:eduvibe/presentation/strategies/study_strartegies.dart';
 import 'package:eduvibe/presentation/welcome/view/welcome_screen/welcome_screen.dart';
-import 'package:eduvibe/settings/notifications_settings/notifications_settings.dart';
-import 'package:eduvibe/settings/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,6 +25,8 @@ import '../../presentation/learn/learn_screen.dart';
 import '../../presentation/profile/cubit/profile_cubit.dart';
 import '../../presentation/register/register_screen/register_screen.dart';
 import '../../presentation/resetPassword/resetPassword_screen/resetPassword_screen.dart';
+import '../../presentation/settings/notifications_settings/notifications_settings.dart';
+import '../../presentation/settings/settings.dart';
 import '../di/di.dart';
 
 class AppRouter {

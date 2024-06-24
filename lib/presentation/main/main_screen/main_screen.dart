@@ -1,7 +1,6 @@
 import 'package:eduvibe/core/di/di.dart';
 import 'package:eduvibe/core/theme/ev_colors.dart';
 import 'package:eduvibe/presentation/chatbot/view/chatbot.dart';
-import 'package:eduvibe/settings/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +10,7 @@ import '../../../core/theme/assets.dart';
 import '../../chatbot/cubit/chatbot_cubit.dart';
 import '../../home/view/home_screen.dart';
 import '../../learn/learn_screen.dart';
+import '../../settings/settings.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
