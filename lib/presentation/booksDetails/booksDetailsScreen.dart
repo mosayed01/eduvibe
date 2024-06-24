@@ -21,7 +21,7 @@ class BooksDetailsScreen extends StatelessWidget {
           icon:
           Icon(Icons.arrow_back, size: 24, color: EVColors.backgroundDark),
           onPressed: () {
-            // Navigator.pushReplacementNamed(context, Routes.mainScreen);
+            Navigator.of(context).pop();
           },
         ),
       ),
