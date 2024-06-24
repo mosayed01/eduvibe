@@ -12,7 +12,9 @@ class Routes {
   static const String profileScreen = '/profileScreen';
   static const String libraryScreen = '/libraryScreen'; // TODO: implement screen
   static const String coursesScreen = '/coursesScreen';
+  static const String booksScreen = '/booksScreen';
   static const String courseDetailsScreen = '/courseDetailsScreen';
+  static const String booksDetailsScreen = '/BooksDetailsScreen';
   static const String helpScreen = '/helpScreen'; // TODO: implement screen
   static const String notesScreen = '/notesScreen';
   static const String alarmScreen = '/alarmScreen';
