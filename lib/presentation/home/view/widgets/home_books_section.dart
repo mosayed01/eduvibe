@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -5,7 +7,6 @@ import '../../../../core/route/routes.dart';
 import '../../../../core/theme/assets.dart';
 import '../../../../core/theme/ev_colors.dart';
 import '../../../../core/widget/spacers.dart';
-
 
 class HomeBooksSection extends StatefulWidget {
   const HomeBooksSection({super.key});
@@ -15,6 +16,8 @@ class HomeBooksSection extends StatefulWidget {
 }
 
 class _HomeBooksSectionState extends State<HomeBooksSection> {
+
+
   @override
   Widget build(BuildContext context) {
     return _buildBooks(context);
@@ -32,19 +35,19 @@ class _HomeBooksSectionState extends State<HomeBooksSection> {
             Books(
               title: 'Mathematics',
               description: 'Learn Mathematics',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '1',
             ),
             Books(
               title: 'Physics',
               description: 'Learn Physics',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '2',
             ),
             Books(
               title: 'Chemistry',
               description: 'Learn Chemistry',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '3',
             ),
           ],
@@ -66,8 +69,8 @@ class _HomeBooksSectionState extends State<HomeBooksSection> {
           child: Text(
             title,
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-              color: getOnBackground87(context),
-            ),
+                  color: getOnBackground87(context),
+                ),
           ),
         ),
         verticalSpacer(8),
@@ -90,7 +93,7 @@ class _HomeBooksSectionState extends State<HomeBooksSection> {
     );
   }
 
-  Widget _buildBookItem(BuildContext context,Books books) {
+  Widget _buildBookItem(BuildContext context, Books books) {
     return GestureDetector(
       onTap: () {
         Navigator.of(context)
@@ -102,7 +105,7 @@ class _HomeBooksSectionState extends State<HomeBooksSection> {
           ClipRRect(
             borderRadius: BorderRadius.circular(24.r),
             child: Image.asset(
-              Assets.java,
+              getRandomPath(),
               width: 140.w,
               height: 180.h,
               fit: BoxFit.cover,
@@ -127,4 +130,17 @@ class Books {
     required this.iconPath,
     required this.id,
   });
+}
+List<String> imgs = [
+  Assets.micro,
+  Assets.Ai,
+  Assets.Sql,
+  Assets.wordPress,
+  Assets.springBoot,
+  Assets.flutter,
+  Assets.android
+];
+
+String getRandomPath() {
+  return imgs[Random().nextInt(imgs.length)];
 }

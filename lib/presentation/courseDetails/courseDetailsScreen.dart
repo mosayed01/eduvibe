@@ -14,6 +14,7 @@ import 'package:shimmer/shimmer.dart';
 import '../../core/di/di.dart';
 import '../../core/theme/ev_colors.dart';
 import '../../domain/i_courses_repo.dart';
+import '../home/view/widgets/home_books_section.dart';
 
 class CourseDetailsScreen extends StatefulWidget {
   final String id;
@@ -74,7 +75,7 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
               },
               blendMode: BlendMode.dstIn,
               child: Image.asset(
-                Assets.php,
+                getRandomPath(),
                 width: 365.0.w,
                 height: 365.0.h,
                 fit: BoxFit.cover,
@@ -126,7 +127,7 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset(
-                                Assets.php,
+                                getRandomPath(),
                                 width: 140.0.w,
                                 height: 180.0.h,
                                 fit: BoxFit.cover,

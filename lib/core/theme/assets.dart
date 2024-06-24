@@ -42,9 +42,17 @@ class Assets {
   static const String theme = 'assets/svgs/theme.svg';
   static const String logout = 'assets/svgs/logout.svg';
   static const String php = 'assets/images/php.png';
-
   static const String iconAlarm = 'assets/svgs/ic_alarm.svg';
   static const String iconTimer = 'assets/svgs/ic_timer.svg';
   static const String iconStopwatch = 'assets/svgs/ic_stopwatch.svg';
   static const String iconWelcome = 'assets/svgs/ic_welcome.svg';
+
+  static const String android = 'assets/images/android.jpg';
+  static const String Ai = 'assets/images/ai.jpg';
+  static const String flutter = 'assets/images/f.jpg';
+  static const String micro = 'assets/images/mi.jpg';
+  static const String springBoot = 'assets/images/spring.jpg';
+  static const String Sql = 'assets/images/sql.jpg';
+  static const String wordPress = 'assets/images/w.jpg';
+
 }

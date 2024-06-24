@@ -46,7 +46,7 @@ class _SelectorSectionState extends State<SelectorSection> {
         : getOnBackground60(context);
     return Expanded(
       child: InkWell(
-        overlayColor: WidgetStateProperty.all(Colors.transparent),
+        // overlayColor: WidgetStateProperty.all(Colors.transparent),
         borderRadius: BorderRadius.circular(16.r),
         onTap: () {
           setState(() {

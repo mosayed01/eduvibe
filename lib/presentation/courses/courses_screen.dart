@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../core/di/di.dart';
+import '../home/view/widgets/home_books_section.dart';
 
 class GridImageCourse extends StatefulWidget {
   const GridImageCourse({super.key});
@@ -55,7 +56,7 @@ class _GridImageState extends State<GridImageCourse> {
               child: Wrap(
                 children: [
                   Image.asset(
-                    'assets/images/courses.png',
+                    getRandomPath(),
                     height: 180,
                     fit: BoxFit.fill,
                   ),

@@ -5,6 +5,7 @@ import '../../../../core/route/routes.dart';
 import '../../../../core/theme/assets.dart';
 import '../../../../core/theme/ev_colors.dart';
 import '../../../../core/widget/spacers.dart';
+import 'home_books_section.dart';
 
 class HomeCoursesSection extends StatefulWidget {
   const HomeCoursesSection({super.key});
@@ -31,19 +32,19 @@ class _HomeCoursesSectionState extends State<HomeCoursesSection> {
             Course(
               title: 'Mathematics',
               description: 'Learn Mathematics',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '1',
             ),
             Course(
               title: 'Physics',
               description: 'Learn Physics',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '2',
             ),
             Course(
               title: 'Chemistry',
               description: 'Learn Chemistry',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '3',
             ),
           ],
@@ -56,19 +57,19 @@ class _HomeCoursesSectionState extends State<HomeCoursesSection> {
             Course(
               title: 'Biology',
               description: 'Learn Biology',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '4',
             ),
             Course(
               title: 'History',
               description: 'Learn History',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '5',
             ),
             Course(
               title: 'Geography',
               description: 'Learn Geography',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '6',
             ),
           ],
@@ -81,19 +82,19 @@ class _HomeCoursesSectionState extends State<HomeCoursesSection> {
             Course(
               title: 'Mathematics',
               description: 'Learn Mathematics',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '7',
             ),
             Course(
               title: 'Physics',
               description: 'Learn Physics',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '8',
             ),
             Course(
               title: 'Chemistry',
               description: 'Learn Chemistry',
-              iconPath: Assets.java,
+              iconPath: getRandomPath(),
               id: '9',
             ),
           ],
