@@ -47,13 +47,13 @@ class _LearnScreenState extends State<LearnScreen> {
             itemCount: _list.length,
             padding: EdgeInsets.all(12),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5
+                crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 32
             ),
             itemBuilder: (context, index) {
               return Wrap(
                 children: [
                   Image.asset(imgs[index],height: 180,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.contain,
                       ),
                   Text(_list[index].name ?? '',maxLines: 2,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),)
                 ],

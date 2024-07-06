@@ -224,102 +224,99 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ),
                       verticalSpacer(20),
-
-                      /////////////////////////////////////////////////////////
-                      // Padding(
-                      //   padding: EdgeInsets.symmetric(horizontal: 30.w),
-                      //   child: Container(
-                      //     decoration: BoxDecoration(
-                      //         color: isDarkMode
-                      //             ? EVColors.backgroundDark
-                      //             : EVColors.backgroundLight,
-                      //         borderRadius: BorderRadius.circular(35.r),
-                      //         border: Border.all(
-                      //           color: isDarkMode
-                      //               ? EVColors.onBackground16Dark
-                      //               : EVColors.onBackground16Light,
-                      //         )),
-                      //     child: DropdownButtonHideUnderline(
-                      //       child: DropdownButton<String>(
-                      //         focusColor: Colors.transparent,
-                      //         value: _cubit.selectedUniversity,
-                      //         onChanged: (newValue) {
-                      //           _cubit.changeOption(newValue);
-                      //         },
-                      //         dropdownColor: isDarkMode
-                      //             ? EVColors.backgroundDark
-                      //             : EVColors.backgroundLight,
-                      //         isExpanded: true,
-                      //         icon: const SizedBox(
-                      //           child: Padding(
-                      //             padding: EdgeInsets.all(12.0),
-                      //             child: Icon(
-                      //               Icons.keyboard_arrow_down_sharp,
-                      //               color: Colors.grey,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //         style: TextStyle(
-                      //           color: isDarkMode
-                      //               ? EVColors.backgroundLight
-                      //               : EVColors.onBackground37Light,
-                      //           fontSize: 16,
-                      //         ),
-                      //         hint: Padding(
-                      //           padding: EdgeInsets.symmetric(horizontal: 13.w),
-                      //           child: Text(
-                      //             AppLocalizations.current.university,
-                      //             style: TextStyle(
-                      //               color: isDarkMode
-                      //                   ? EVColors.onBackground37Dark
-                      //                   : EVColors.onBackground37Light,
-                      //               fontWeight: FontWeight.w600,
-                      //               fontSize: 16,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //         items: _university.map<DropdownMenuItem<String>>(
-                      //             (String value) {
-                      //           return DropdownMenuItem<String>(
-                      //             value: value,
-                      //             child: SizedBox(
-                      //               width: double.infinity,
-                      //               child: Padding(
-                      //                 padding: EdgeInsets.symmetric(
-                      //                     horizontal: 15.0.w),
-                      //                 child: Text(
-                      //                   style: TextStyle(
-                      //                     fontWeight: FontWeight.w600,
-                      //                     color: isDarkMode
-                      //                         ? EVColors.onBackground37Dark
-                      //                         : EVColors.onBackground37Light,
-                      //                   ),
-                      //                   value,
-                      //                   textAlign: TextAlign.start,
-                      //                 ),
-                      //               ),
-                      //             ),
-                      //           );
-                      //         }).toList(),
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                      // Container(
-                      //   // Your other widgets...
-                      //   child: (!_university
-                      //           .contains(_cubit.selectedUniversity))
-                      //       ? const Padding(
-                      //           padding: EdgeInsets.only(bottom: 8.0, left: 40),
-                      //           child: Text(
-                      //             'Make sure to choose your university',
-                      //             style: TextStyle(
-                      //                 fontSize: 12, color: Colors.red),
-                      //           ),
-                      //         )
-                      //       : Container(),
-                      // ),
-                      /////////////////////////////////////////////////////////
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 30.w),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: isDarkMode
+                                  ? EVColors.backgroundDark
+                                  : EVColors.backgroundLight,
+                              borderRadius: BorderRadius.circular(35.r),
+                              border: Border.all(
+                                color: isDarkMode
+                                    ? EVColors.onBackground16Dark
+                                    : EVColors.onBackground16Light,
+                              )),
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton<String>(
+                              focusColor: Colors.transparent,
+                              value: _cubit.selectedUniversity,
+                              onChanged: (newValue) {
+                                _cubit.changeOption(newValue);
+                              },
+                              dropdownColor: isDarkMode
+                                  ? EVColors.backgroundDark
+                                  : EVColors.backgroundLight,
+                              isExpanded: true,
+                              icon: const SizedBox(
+                                child: Padding(
+                                  padding: EdgeInsets.all(12.0),
+                                  child: Icon(
+                                    Icons.keyboard_arrow_down_sharp,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ),
+                              style: TextStyle(
+                                color: isDarkMode
+                                    ? EVColors.backgroundLight
+                                    : EVColors.onBackground37Light,
+                                fontSize: 16,
+                              ),
+                              hint: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 13.w),
+                                child: Text(
+                                  AppLocalizations.current.university,
+                                  style: TextStyle(
+                                    color: isDarkMode
+                                        ? EVColors.onBackground37Dark
+                                        : EVColors.onBackground37Light,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                              items: _university.map<DropdownMenuItem<String>>(
+                                  (String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: SizedBox(
+                                    width: double.infinity,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 15.0.w),
+                                      child: Text(
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          color: isDarkMode
+                                              ? EVColors.onBackground37Dark
+                                              : EVColors.onBackground37Light,
+                                        ),
+                                        value,
+                                        textAlign: TextAlign.start,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // Your other widgets...
+                        child: (!_university
+                                .contains(_cubit.selectedUniversity))
+                            ? const Padding(
+                                padding: EdgeInsets.only(bottom: 8.0, left: 40),
+                                child: Text(
+                                  'Make sure to choose your university',
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.red),
+                                ),
+                              )
+                            : Container(),
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
